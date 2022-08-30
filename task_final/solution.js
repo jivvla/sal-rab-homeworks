@@ -42,11 +42,11 @@ function sendRequest(name, phone, address, goods, sum) {
     let countOfGoods = goods.length;
        
     for (let i = 0; i < countOfGoods; i += 1) {
-    data.goods.push(goods[i]);
-    }
+    let titleForData = titleForData.push(goods[i].title);
+    let countForData = countForData.push(goods[i].count);
+    };
 
-    delete data.goods.id;
-    delete data.goods.price;
+    data.goods = {title: titleForData, count: countForData};
        
     let jsonData = JSON.stringify(data);
 
