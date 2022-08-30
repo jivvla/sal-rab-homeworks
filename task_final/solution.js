@@ -42,9 +42,14 @@ function sendRequest(name, phone, address, goods, sum) {
     let countOfGoods = goods.length;
        
     for (let i = 0; i < countOfGoods; i += 1) {
-    data.goods.title.push(goods[i].title);
-    data.goods.count.push(goods[i].count);
+    data.goods.push(goods[i].title);
     }
+
+    let countOfDataGoods = data.goods.length;
+
+    for (let i = 0; i < countOfDataGoods; i += 1) {
+        data.goods[i].count = goods[i].count;
+        }
 
     let jsonData = JSON.stringify(data);
 
