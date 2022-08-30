@@ -45,9 +45,9 @@ function sendRequest(name, phone, address, goods, sum) {
     data.goods.push(goods[i]);
     }
 
-    let countOfDataGoods = data.goods.length;
-
-    
+    delete data.goods.id;
+    delete data.goods.price;
+       
     let jsonData = JSON.stringify(data);
 
     return jsonData;
