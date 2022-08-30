@@ -41,11 +41,11 @@ function sendRequest(name, phone, address, goods, sum) {
     data.order.sum = sum;
 
     let countOfGoods = goods.length;
-     data.goods.title = goods.title,
-     data.goods.count = goods.count;
-   
+       
     for (let i = 0; i < countOfGoods; i += 1) {
     data.goods.push(goods[i]);
+    data.goods.title = goods[i].title,
+    data.goods.count = goods[i].count;
     }
 
     let jsonData = JSON.stringify(data);
